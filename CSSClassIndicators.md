@@ -404,13 +404,42 @@ When multiple CSS rules target the same element, the browser decides which rule 
 
 ---
 
-## Strength Order (Weak → Strong)
+## Selector Strength Order (Most Common)
 
-1. Element selectors (`p`, `div`)
-2. Class selectors (`.box`), attribute selectors (`[type="text"]`), pseudo-classes (`:hover`, `:focus`, `:nth-child`)
-3. ID selectors (`#main`)
-4. Inline styles (`style=""`)
-5. `!important` rules
+When multiple CSS rules target the same element, the more specific selector wins.
+
+In normal everyday CSS, the strength order is:
+
+1. ID selector (`#id`) — strongest  
+2. Class selector (`.class`) — medium  
+3. Type/element selector (`p`, `div`, `h1`) — weakest  
+
+Example:
+
+    p {
+      color: blue;
+    }
+
+    .text {
+      color: green;
+    }
+
+    #intro {
+      color: red;
+    }
+
+HTML:
+
+    <p id="intro" class="text">Hello</p>
+
+Result:
+- The text will be red because the ID selector is strongest.
+
+Rule of thumb:
+- Use element selectors for general defaults  
+- Use classes for most styling  
+- Use IDs only for unique one-off sections  
+
 
 ---
 
