@@ -1,7 +1,0 @@
-# CSS Class Indicators
-
-# = ID
-. = Class
-Element:pseudoclass = Pseudo Class#
-Element[Attribute*=Value] = Attribute
-Element = Element
